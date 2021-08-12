@@ -16,6 +16,11 @@ beforeEach(() => {
   );
 });
 
-it("Creates one <li> per comment", () => {
-  console.log(wrapped.find("li").length);
+it("creates one <li> per comment", () => {
+  expect(wrapped.find("li").length).toEqual(2);
+});
+
+it("shows text for each comment", () => {
+  expect(wrapped.render().text()).toContain("Comment 1");
+  expect(wrapped.render().text()).toContain("Comment 2");
 });
