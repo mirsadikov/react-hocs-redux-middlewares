@@ -1,4 +1,4 @@
-import CommentBoxRFC, { CommentBox } from "components/CommentBox";
+import CommentBox, { CommentBoxRFC } from "components/CommentBox";
 import CommentList from "components/CommentList";
 
 // eslint-disable-next-line

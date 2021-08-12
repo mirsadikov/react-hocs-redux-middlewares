@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { connect } from "react-redux";
+import * as actions from "actions";
 
 class CommentBox extends React.Component {
   constructor(props) {
@@ -16,8 +18,7 @@ class CommentBox extends React.Component {
   handleSubmit = (event) => {
     event.preventDefault();
 
-    // Call an action creator
-    // And save the comment
+    this.props.saveComment(this.state.comment);
 
     this.setState({ comment: "" });
   };
@@ -35,10 +36,7 @@ class CommentBox extends React.Component {
   }
 }
 
-export { CommentBox };
-
-// eslint-disable-next-line
-export default () => {
+const CommentBoxFC = (props) => {
   const [comment, setComment] = useState("");
 
   const handleChange = (event) => {
@@ -48,8 +46,7 @@ export default () => {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    // Call an action creator
-    // And save the comment
+    props.saveComment(comment);
 
     setComment("");
   };
@@ -64,3 +61,6 @@ export default () => {
     </form>
   );
 };
+
+export default connect(null, actions)(CommentBox);
+export const CommentBoxRFC = connect(null, actions)(CommentBoxFC);
