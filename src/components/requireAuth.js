@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 
+// eslint-disable-next-line
 export default (ChildComponent) => {
   class ComposedComponent extends React.Component {
     shouldNavigate() {

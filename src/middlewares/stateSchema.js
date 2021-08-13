@@ -1,3 +1,4 @@
+// eslint-disable-next-line
 export default {
   $schema: "http://json-schema.org/draft-07/schema",
   $id: "http://example.com/example.json",
