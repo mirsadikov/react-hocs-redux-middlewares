@@ -4,10 +4,7 @@ import requireAuth from "./requireAuth";
 import * as actions from "actions";
 
 class CommentBox extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { comment: "" };
-  }
+  state = { comment: "" };
 
   handleChange = (event) => {
     this.setState({ comment: event.target.value });
@@ -40,3 +37,4 @@ class CommentBox extends React.Component {
 }
 
 export default requireAuth(connect(null, actions)(CommentBox));
+// export default connect(null, actions)(requireAuth(CommentBox));
